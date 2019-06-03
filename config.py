@@ -1,5 +1,6 @@
 """
 Configuration example for ``ptpython``.
+(Customized for Les Matheson)
 
 Copy this file to ~/.ptpython/config.py
 """
