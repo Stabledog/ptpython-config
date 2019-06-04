@@ -6,7 +6,7 @@ Copy this file to ~/.ptpython/config.py
 """
 from __future__ import unicode_literals
 from prompt_toolkit.filters import ViInsertMode
-from prompt_toolkit.key_binding.key_processor import KeyPress
+from prompt_toolkit.key_binding.input_processor import KeyPress
 from prompt_toolkit.keys import Keys
 from pygments.token import Token
 
@@ -138,13 +138,13 @@ def configure(repl):
 
 
     # Typing 'jk' in Vi Insert mode, should send escape. (Go back to navigation
-    # mode.)
-    """
-    @repl.add_key_binding('j', 'k', filter=ViInsertMode())
+    # mode.) (except it doesn't work. why not?)
+    '''
+    repl.add_key_binding('j', 'k', filter=ViInsertMode())
     def _(event):
         " Map 'jk' to Escape. "
         event.cli.key_processor.feed(KeyPress(Keys.Escape))
-    """
+    '''
 
     # Custom key binding for some simple autocorrection while typing.
     """
