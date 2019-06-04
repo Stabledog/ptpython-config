@@ -41,7 +41,7 @@ def configure(repl):
     repl.completion_menu_scroll_offset = 0
 
     # Show line numbers (when the input contains multiple lines.)
-    repl.show_line_numbers = False
+    repl.show_line_numbers = True
 
     # Show status bar.
     repl.show_status_bar = True
@@ -56,7 +56,7 @@ def configure(repl):
     repl.wrap_lines = True
 
     # Mouse support.
-    repl.enable_mouse_support = True
+    repl.enable_mouse_support = False
 
     # Complete while typing. (Don't require tab before the
     # completion menu is shown.)
@@ -69,7 +69,7 @@ def configure(repl):
     repl.paste_mode = False
 
     # Use the classic prompt. (Display '>>>' instead of 'In [1]'.)
-    repl.prompt_style = 'classic'  # 'classic' or 'ipython'
+    repl.prompt_style = 'ipython'  # 'classic' or 'ipython'
 
     # Don't insert a blank line after the output.
     repl.insert_blank_line_after_output = False
@@ -102,14 +102,14 @@ def configure(repl):
     repl.enable_input_validation = True
 
     # Use this colorscheme for the code.
-    repl.use_code_colorscheme('pastie')
+    repl.use_code_colorscheme('trac')
 
     # Set color depth (keep in mind that not all terminals support true color).
 
     #repl.color_depth = 'DEPTH_1_BIT'  # Monochrome.
     #repl.color_depth = 'DEPTH_4_BIT'  # ANSI colors only.
-    repl.color_depth = 'DEPTH_8_BIT'  # The default, 256 colors.
-    #repl.color_depth = 'DEPTH_24_BIT'  # True color.
+    #repl.color_depth = 'DEPTH_8_BIT'  # The default, 256 colors.
+    repl.color_depth = 'DEPTH_24_BIT'  # True color.
 
     # Syntax.
     repl.enable_syntax_highlighting = True
