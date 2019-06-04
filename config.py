@@ -139,12 +139,10 @@ def configure(repl):
 
     # Typing 'jk' in Vi Insert mode, should send escape. (Go back to navigation
     # mode.) (except it doesn't work. why not?)
-    '''
-    repl.add_key_binding('j', 'k', filter=ViInsertMode())
+    @repl.add_key_binding('j', 'k', filter=ViInsertMode())
     def _(event):
         " Map 'jk' to Escape. "
-        event.cli.key_processor.feed(KeyPress(Keys.Escape))
-    '''
+        event.cli.input_processor.feed(KeyPress(Keys.Escape))
 
     # Custom key binding for some simple autocorrection while typing.
     """
